@@ -44,7 +44,7 @@ const BookingDialog = ({
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
-              className="w-full p-3 border rounded-lg"
+              className="w-full p-3 border rounded-lg bg-white"
               required
             />
           </div>
@@ -59,7 +59,7 @@ const BookingDialog = ({
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
               }
-              className="w-full p-3 border rounded-lg"
+              className="w-full p-3 border rounded-lg bg-white"
               required
             />
           </div>
@@ -73,7 +73,7 @@ const BookingDialog = ({
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
-              className="w-full p-3 border rounded-lg min-h-[100px]"
+              className="w-full p-3 border rounded-lg min-h-[100px] bg-white"
               required
             />
           </div>
