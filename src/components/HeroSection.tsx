@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import BookingDialog from "./BookingDialog";
 
 const HeroSection = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   return (
     <section className="hero-gradient min-h-screen flex items-center pt-16">
       <div className="container mx-auto px-4">
@@ -22,6 +26,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-accent text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-accent/90 transition-colors"
+              onClick={() => setIsBookingOpen(true)}
             >
               احجز الآن
             </motion.button>
@@ -41,6 +46,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+      <BookingDialog open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </section>
   );
 };

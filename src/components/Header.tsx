@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import BookingDialog from "./BookingDialog";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const menuItems = [
     { label: "عنّا", href: "#about" },
@@ -31,7 +33,10 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <button className="bg-accent text-white px-6 py-2 rounded-full hover:bg-accent/90 transition-colors">
+            <button 
+              className="bg-accent text-white px-6 py-2 rounded-full hover:bg-accent/90 transition-colors"
+              onClick={() => setIsBookingOpen(true)}
+            >
               احجز الآن
             </button>
           </nav>
@@ -62,7 +67,10 @@ const Header = () => {
               ))}
               <button
                 className="w-full text-center bg-accent text-white px-6 py-2 rounded-full hover:bg-accent/90 transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setIsBookingOpen(true);
+                }}
               >
                 احجز الآن
               </button>
@@ -70,6 +78,7 @@ const Header = () => {
           </div>
         )}
       </div>
+      <BookingDialog open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </header>
   );
 };
