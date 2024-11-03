@@ -81,7 +81,7 @@ const BookingDialog = ({
             type="submit"
             className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-colors"
           >
-            إرسال الطلب
+            احجز الآن
           </button>
         </form>
       </DialogContent>
