@@ -30,11 +30,11 @@ const BookingDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-center text-2xl mb-4">احجز موعدك الآن</DialogTitle>
+          <DialogTitle className="text-center text-2xl mb-4 text-white">احجز موعدك الآن</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2">
+            <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
               الاسم
             </label>
             <input
@@ -49,7 +49,7 @@ const BookingDialog = ({
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium mb-2">
+            <label htmlFor="phone" className="block text-sm font-medium mb-2 text-white">
               رقم الجوال
             </label>
             <input
@@ -64,7 +64,7 @@ const BookingDialog = ({
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm font-medium mb-2">
+            <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
               الرسالة
             </label>
             <textarea
