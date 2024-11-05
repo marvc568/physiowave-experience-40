@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, MessageSquare } from "lucide-react";
 import BookingDialog from "./BookingDialog";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +14,12 @@ const Header = () => {
     { label: "الأسئلة الشائعة", href: "#faq" },
     { label: "تواصل معنا", href: "#contact" },
   ];
+
+  const whatsappIconVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.2, rotate: 10 },
+    tap: { scale: 0.9 }
+  };
 
   return (
     <header className="fixed w-full bg-white shadow-sm z-50">
@@ -39,28 +46,36 @@ const Header = () => {
             >
               احجز الآن
             </button>
-            <a
+            <motion.a
               href="https://wa.me/01113939319"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 hover:text-green-600 transition-colors"
               aria-label="تواصل معنا عبر واتساب"
+              variants={whatsappIconVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
             >
               <MessageSquare size={24} />
-            </a>
+            </motion.a>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-            <a
+            <motion.a
               href="https://wa.me/01113939319"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 hover:text-green-600 transition-colors"
               aria-label="تواصل معنا عبر واتساب"
+              variants={whatsappIconVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
             >
               <MessageSquare size={24} />
-            </a>
+            </motion.a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
