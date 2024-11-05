@@ -47,7 +47,7 @@ const Header = () => {
               احجز الآن
             </button>
             <motion.a
-              href="https://wa.me/01113939319"
+              href="https://wa.me/201113939319"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 hover:text-green-600 transition-colors"
@@ -64,7 +64,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
             <motion.a
-              href="https://wa.me/01113939319"
+              href="https://wa.me/201113939319"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 hover:text-green-600 transition-colors"
