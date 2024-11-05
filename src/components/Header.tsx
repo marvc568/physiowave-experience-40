@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageSquare } from "lucide-react";
 import BookingDialog from "./BookingDialog";
 
 const Header = () => {
@@ -23,7 +23,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-8 space-x-reverse">
+          <nav className="hidden md:flex items-center space-x-8 space-x-reverse">
             {menuItems.map((item) => (
               <a
                 key={item.href}
@@ -39,16 +39,35 @@ const Header = () => {
             >
               احجز الآن
             </button>
+            <a
+              href="https://wa.me/01113939319"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-600 transition-colors"
+              aria-label="تواصل معنا عبر واتساب"
+            >
+              <MessageSquare size={24} />
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <a
+              href="https://wa.me/01113939319"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-600 transition-colors"
+              aria-label="تواصل معنا عبر واتساب"
+            >
+              <MessageSquare size={24} />
+            </a>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
