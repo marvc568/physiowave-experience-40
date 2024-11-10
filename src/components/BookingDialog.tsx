@@ -18,10 +18,21 @@ const BookingDialog = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Create WhatsApp message
+    const message = `*طلب حجز جديد*%0a
+الاسم: ${formData.name}%0a
+رقم الجوال: ${formData.phone}%0a
+الرسالة: ${formData.message}`;
+    
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/201113939319?text=${message}`, '_blank');
+    
     toast({
       title: "تم إرسال طلبك بنجاح",
-      description: "سنتواصل معك في أقرب وقت ممكن",
+      description: "سيتم التواصل معك عبر الواتساب",
     });
+    
     setFormData({ name: "", phone: "", message: "" });
     onOpenChange(false);
   };
